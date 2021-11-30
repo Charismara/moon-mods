@@ -1,0 +1,5 @@
+rootProject.name = 'moon-mods'
+
+include "moon-api"
+include "moon-magic"
+include "moon-tech"

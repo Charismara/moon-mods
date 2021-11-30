@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.4/65bfa0e731e4b81a50f8cea35e546f023a4cfe5d/mixin-0.8.4-processor.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar" />
+        </processorPath>
+        <module name="moon-mods.moon-api.main" />
+        <module name="moon-mods.moon-tech.main" />
+        <module name="moon-mods.moon-magic.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="16" />
+  </component>
+</project>
