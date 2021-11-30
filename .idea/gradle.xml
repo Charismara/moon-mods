@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -9,9 +10,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/moon-api" />
-            <option value="$PROJECT_DIR$/moon-magic" />
-            <option value="$PROJECT_DIR$/moon-tech" />
+            <option value="$PROJECT_DIR$/moon_api" />
+            <option value="$PROJECT_DIR$/moon_magic" />
+            <option value="$PROJECT_DIR$/moon_tech" />
           </set>
         </option>
       </GradleProjectSettings>

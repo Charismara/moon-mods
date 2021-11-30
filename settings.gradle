@@ -1,5 +1,5 @@
-rootProject.name = 'moon-mods'
+rootProject.name = 'moon_mods'
 
-include "moon-api"
-include "moon-magic"
-include "moon-tech"
+include "moon_api"
+include "moon_magic"
+include "moon_tech"
