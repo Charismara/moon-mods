@@ -3,3 +3,4 @@ rootProject.name = 'moon_mods'
 include "moon_api"
 include "moon_magic"
 include "moon_tech"
+include "testing"

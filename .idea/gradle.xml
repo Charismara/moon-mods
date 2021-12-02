@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/moon_api" />
             <option value="$PROJECT_DIR$/moon_magic" />
             <option value="$PROJECT_DIR$/moon_tech" />
+            <option value="$PROJECT_DIR$/testing" />
           </set>
         </option>
       </GradleProjectSettings>

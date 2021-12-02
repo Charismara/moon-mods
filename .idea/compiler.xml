@@ -12,6 +12,7 @@
         <module name="moon_mods.moon_api.main" />
         <module name="moon_mods.moon_magic.main" />
         <module name="moon_mods.moon_tech.main" />
+        <module name="moon_mods.testing.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="16" />
