@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "de.blutmondgilde.moonapi.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_16",
   "refmap": "moonapi.refmap.json",
   "mixins": [
   ],

@@ -1,22 +1,34 @@
 package de.blutmondgilde.moonapi;
 
+import de.blutmondgilde.moonapi.capability.CapabilityHandler;
+import de.blutmondgilde.moonapi.network.MoonNetwork;
 import lombok.Getter;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("moon_api")
+@Mod(MoonApi.MOD_ID)
 public class MoonApi {
+    public static final String MOD_ID = "moon_api";
     @Getter
-    private static final Logger Logger = LogManager.getLogger();
+    private static final Logger Logger = LogManager.getLogger("MoonAPI");
+    @Getter
+    private static CommonProxy proxy = null;
 
     public MoonApi() {
+        proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
+
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         modBus.addListener(this::setup);
+
+        CapabilityHandler.initialize();
     }
 
-    private void setup(final FMLCommonSetupEvent event) {}
+    private void setup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(MoonNetwork::registerPackets);
+    }
 }
