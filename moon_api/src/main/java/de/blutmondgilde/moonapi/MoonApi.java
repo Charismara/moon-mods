@@ -1,6 +1,6 @@
 package de.blutmondgilde.moonapi;
 
-import de.blutmondgilde.moonapi.capability.CapabilityHandler;
+import de.blutmondgilde.moonapi.capability.MoonCapabilityHandler;
 import de.blutmondgilde.moonapi.network.MoonNetwork;
 import lombok.Getter;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,7 +25,7 @@ public class MoonApi {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         modBus.addListener(this::setup);
 
-        CapabilityHandler.initialize();
+        MoonCapabilityHandler.initialize();
     }
 
     private void setup(final FMLCommonSetupEvent event) {

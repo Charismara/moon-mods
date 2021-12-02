@@ -1,7 +1,7 @@
 package de.blutmondgilde.moonmagic;
 
 import de.blutmondgilde.moonapi.capability.AttachmentPredicate;
-import de.blutmondgilde.moonapi.capability.CapabilityHandler;
+import de.blutmondgilde.moonapi.capability.MoonCapabilityHandler;
 import de.blutmondgilde.moonapi.capability.CapabilityType;
 import de.blutmondgilde.moonapi.capability.SimpleCapability;
 import de.blutmondgilde.moonmagic.testing.ITestCap;
@@ -31,7 +31,7 @@ public class MoonMagic {
     }
 
     private void setup(final FMLCommonSetupEvent event) {}
-    
+
     private void registerCapabilities() {
         SimpleCapability<?>[] capabilities = {
             SimpleCapability.of(new ResourceLocation(MOD_ID, "stages"),
@@ -43,7 +43,7 @@ public class MoonMagic {
         };
 
         for (SimpleCapability<?> capability : capabilities) {
-            CapabilityHandler.register(capability);
+            MoonCapabilityHandler.register(capability);
         }
     }
 }

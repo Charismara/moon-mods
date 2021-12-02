@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 @SuppressWarnings("rawtypes")
-public class CapabilityHandler {
+public class MoonCapabilityHandler {
     private static final ArrayList<SimpleCapability<?>> entityCapabilities = new ArrayList<>();
     private static final ArrayList<SimpleCapability<?>> blockEntityCapabilities = new ArrayList<>();
     private static final ArrayList<SimpleCapability<?>> itemCapabilities = new ArrayList<>();
@@ -32,17 +32,17 @@ public class CapabilityHandler {
     @ApiStatus.Internal
     public static void initialize() {
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-        forgeBus.addGenericListener(Entity.class, CapabilityHandler::attachToEntity);
-        forgeBus.addGenericListener(BlockEntity.class, CapabilityHandler::attachToTileEntity);
-        forgeBus.addGenericListener(ItemStack.class, CapabilityHandler::attachToItem);
-        forgeBus.addGenericListener(Level.class, CapabilityHandler::attachToWorld);
-        forgeBus.addGenericListener(LevelChunk.class, CapabilityHandler::attachToChunk);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(CapabilityHandler::registerCapabilities);
+        forgeBus.addGenericListener(Entity.class, MoonCapabilityHandler::attachToEntity);
+        forgeBus.addGenericListener(BlockEntity.class, MoonCapabilityHandler::attachToTileEntity);
+        forgeBus.addGenericListener(ItemStack.class, MoonCapabilityHandler::attachToItem);
+        forgeBus.addGenericListener(Level.class, MoonCapabilityHandler::attachToWorld);
+        forgeBus.addGenericListener(LevelChunk.class, MoonCapabilityHandler::attachToChunk);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(MoonCapabilityHandler::registerCapabilities);
 
-        forgeBus.addListener(CapabilityHandler::syncPlayerLoggedIn);
-        forgeBus.addListener(CapabilityHandler::syncPlayerDimChange);
-        forgeBus.addListener(CapabilityHandler::syncPlayerRespawn);
-        forgeBus.addListener(CapabilityHandler::syncPlayerStartTracking);
+        forgeBus.addListener(MoonCapabilityHandler::syncPlayerLoggedIn);
+        forgeBus.addListener(MoonCapabilityHandler::syncPlayerDimChange);
+        forgeBus.addListener(MoonCapabilityHandler::syncPlayerRespawn);
+        forgeBus.addListener(MoonCapabilityHandler::syncPlayerStartTracking);
     }
 
     private static void registerCapabilities(RegisterCapabilitiesEvent e) {
