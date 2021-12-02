@@ -1,6 +1,7 @@
 package de.blutmondgilde.moonmagic.testing;
 
 import de.blutmondgilde.moonapi.MoonApi;
+import de.blutmondgilde.moonapi.capability.MoonCapabilityHandler;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.CapabilityToken;
@@ -20,6 +21,7 @@ public class TestCapHolder {
             String uuid = UUID.randomUUID().toString();
             MoonApi.getLogger().info("Current Value: {}, New Value: {}", iTestCap.getValue(), uuid);
             iTestCap.setValue(uuid);
+            MoonCapabilityHandler.find(iTestCap.getClass()).ifPresent(simpleCapability -> simpleCapability.sync(iTestCap, e.getPlayer()));
         });
     }
 }
