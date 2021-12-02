@@ -91,7 +91,7 @@ repositories {
 }
 
 dependencies {
-    implementation fg.deobf(project(':moon_api'))
+    implementation project(':moon_api')
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

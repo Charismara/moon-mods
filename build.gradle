@@ -52,7 +52,7 @@ subprojects {
     }
 
     dependencies {
-        minecraft 'net.minecraftforge:forge:1.17.1-37.0.126'
+        minecraft 'net.minecraftforge:forge:1.17.1-37.1.0'
 
         annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
 
