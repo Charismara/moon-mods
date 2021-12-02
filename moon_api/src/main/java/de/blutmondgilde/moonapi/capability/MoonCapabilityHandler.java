@@ -18,8 +18,10 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.ApiStatus;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @SuppressWarnings("rawtypes")
 public class MoonCapabilityHandler {
@@ -78,6 +80,10 @@ public class MoonCapabilityHandler {
         return simpleCapability;
     }
 
+    /**
+     * Prefiltered version of {@link MoonCapabilityHandler#find(Class)}.
+     * This Method uses the {@link ResourceLocation} to find a {@link SimpleCapability} in the prefiltered {@link CapabilityType} registry.
+     */
     public static Optional<SimpleCapability<?>> find(ResourceLocation id, CapabilityType type) {
         return switch (type) {
             case ENTITY -> entityCapabilities
@@ -101,6 +107,18 @@ public class MoonCapabilityHandler {
                 .filter(simpleCapability -> simpleCapability.getResourceLocation().equals(id))
                 .findFirst();
         };
+    }
+
+    /**
+     * Looks for a registered {@link SimpleCapability} with the given Interface.
+     * This Method has low performance efficiency.
+     * Use {@link MoonCapabilityHandler#find(ResourceLocation, CapabilityType)} if you can!
+     */
+    public static Optional<SimpleCapability<?>> find(Class<? extends IMoonCapability> interfaceClass) {
+        return Stream.of(entityCapabilities, chunkCapabilities, blockEntityCapabilities, worldCapabilities, itemCapabilities)
+            .flatMap(Collection::stream)
+            .filter(simpleCapability -> simpleCapability.getCapabilityInterface().equals(interfaceClass))
+            .findFirst();
     }
 
     /* ===================== Attachment Events ===================== */
