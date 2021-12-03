@@ -88,5 +88,5 @@ subprojects {
         dependsOn(replaceResources)
     }
 
-    jar.finalizedBy('reobfJar')
+    assemble.dependsOn('reobfJar')
 }

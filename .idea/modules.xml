@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/moon_api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/moon_api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/moon_api/moon_mods.moon_api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/moon_api/moon_mods.moon_api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/moon_magic/moon_mods.moon_magic.test.iml" filepath="$PROJECT_DIR$/.idea/modules/moon_magic/moon_mods.moon_magic.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/moon_tech/moon_mods.moon_tech.test.iml" filepath="$PROJECT_DIR$/.idea/modules/moon_tech/moon_mods.moon_tech.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testing/moon_mods.testing.test.iml" filepath="$PROJECT_DIR$/.idea/modules/testing/moon_mods.testing.test.iml" />
     </modules>
   </component>
 </project>
