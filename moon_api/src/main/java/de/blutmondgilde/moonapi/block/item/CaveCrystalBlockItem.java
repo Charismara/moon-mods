@@ -5,7 +5,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 
 public class CaveCrystalBlockItem extends BlockItem {
-    public CaveCrystalBlockItem(AbstractCaveCrystal caveCrystal) {
-        super(caveCrystal, new Properties().tab(CreativeModeTab.TAB_MISC));
+    public CaveCrystalBlockItem(AbstractCaveCrystal caveCrystal, CreativeModeTab tab) {
+        super(caveCrystal, new Properties().tab(tab));
     }
 }

@@ -4,7 +4,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 
 public class MoonMagicRegistries {
-
     public static void init() {
         MoonMagicBlockRegistry.init();
         MoonMagicItemRegistry.init();
