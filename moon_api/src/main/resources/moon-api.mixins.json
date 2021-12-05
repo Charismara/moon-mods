@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "moonapi.refmap.json",
   "mixins": [
+    "MixinLivingEntity"
   ],
   "client": [
   ],

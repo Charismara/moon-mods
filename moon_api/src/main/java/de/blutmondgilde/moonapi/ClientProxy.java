@@ -1,9 +1,12 @@
 package de.blutmondgilde.moonapi;
 
+import de.blutmondgilde.moonapi.block.AbstractCaveCrystal;
 import de.blutmondgilde.moonapi.capability.MoonCapabilityHandler;
 import de.blutmondgilde.moonapi.capability.CapabilityType;
 import de.blutmondgilde.moonapi.network.packet.SyncSimpleCapabilityPacket;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.Entity;
 
 public class ClientProxy extends CommonProxy {
@@ -21,5 +24,10 @@ public class ClientProxy extends CommonProxy {
                 MoonApi.getLogger().info("Updated {} Capability", packet.getResourceLocation());
             });
         });
+    }
+
+    @Override
+    public void clientSetup() {
+        AbstractCaveCrystal.caveCrystals.forEach(caveCrystal -> ItemBlockRenderTypes.setRenderLayer(caveCrystal, RenderType.translucent()));
     }
 }

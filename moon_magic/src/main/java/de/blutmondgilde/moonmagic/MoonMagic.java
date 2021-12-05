@@ -1,9 +1,11 @@
 package de.blutmondgilde.moonmagic;
 
 import de.blutmondgilde.moonapi.capability.AttachmentPredicate;
-import de.blutmondgilde.moonapi.capability.MoonCapabilityHandler;
 import de.blutmondgilde.moonapi.capability.CapabilityType;
+import de.blutmondgilde.moonapi.capability.MoonCapabilityHandler;
 import de.blutmondgilde.moonapi.capability.SimpleCapability;
+import de.blutmondgilde.moonmagic.data.MoonMagicDataGenerator;
+import de.blutmondgilde.moonmagic.registry.MoonMagicRegistries;
 import de.blutmondgilde.moonmagic.testing.ITestCap;
 import de.blutmondgilde.moonmagic.testing.TestCap;
 import de.blutmondgilde.moonmagic.testing.TestCapHolder;
@@ -12,6 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -26,11 +29,17 @@ public class MoonMagic {
     public MoonMagic() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         modBus.addListener(this::setup);
+        modBus.addListener(this::clientSetup);
+        modBus.addListener(MoonMagicDataGenerator::onGatherData);
 
         registerCapabilities();
+        MoonMagicRegistries.init();
     }
 
     private void setup(final FMLCommonSetupEvent event) {}
+
+    private void clientSetup(final FMLClientSetupEvent event) {
+    }
 
     private void registerCapabilities() {
         SimpleCapability<?>[] capabilities = {
