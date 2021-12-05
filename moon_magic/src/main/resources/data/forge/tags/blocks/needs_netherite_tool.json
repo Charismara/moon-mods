@@ -1,6 +1,21 @@
 {
   "replace": false,
   "values": [
-    "moon_magic:black_cave_crystal"
+    "moon_magic:black_cave_crystal",
+    "moon_magic:blue_cave_crystal",
+    "moon_magic:brown_cave_crystal",
+    "moon_magic:gray_cave_crystal",
+    "moon_magic:green_cave_crystal",
+    "moon_magic:light_blue_cave_crystal",
+    "moon_magic:light_gray_cave_crystal",
+    "moon_magic:lime_cave_crystal",
+    "moon_magic:magenta_cave_crystal",
+    "moon_magic:orange_cave_crystal",
+    "moon_magic:pink_cave_crystal",
+    "moon_magic:purple_cave_crystal",
+    "moon_magic:red_cave_crystal",
+    "moon_magic:turquoise_cave_crystal",
+    "moon_magic:white_cave_crystal",
+    "moon_magic:yellow_cave_crystal"
   ]
 }

@@ -25,7 +25,11 @@ public abstract class AbstractCaveCrystal extends Block implements EntityBlock {
     public static ArrayList<AbstractCaveCrystal> caveCrystals = new ArrayList<>();
 
     public AbstractCaveCrystal(MaterialColor color) {
-        super(Properties.of(new Material.Builder(color).build()).noOcclusion().lightLevel(value -> 15).strength(3F, 3F).requiresCorrectToolForDrops());
+        super(Properties.of(new Material.Builder(color).build())
+            .noOcclusion()
+            .lightLevel(value -> 15)
+            .strength(3F, 3F)
+            .requiresCorrectToolForDrops());
         caveCrystals.add(this);
     }
 
