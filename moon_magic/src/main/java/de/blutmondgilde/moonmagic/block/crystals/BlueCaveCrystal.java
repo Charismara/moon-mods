@@ -28,8 +28,14 @@ public class BlueCaveCrystal extends AbstractCaveCrystal {
     @Override
     public void onTick(final Level level, final BlockPos pos, final AABB range) {
         level.getEntitiesOfClass(Player.class, range).forEach(entity -> {
-            if (!entity.getActiveEffectsMap().containsKey(MobEffects.NIGHT_VISION)) {
-                entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 20 * 2, 0, false, true, true));
+            if (isHostile(level, entity)) {
+                if (!entity.getActiveEffectsMap().containsKey(MobEffects.BLINDNESS)) {
+                    entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20 * 2, 0, false, true, true));
+                }
+            } else {
+                if (!entity.getActiveEffectsMap().containsKey(MobEffects.NIGHT_VISION)) {
+                    entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 20 * 2, 0, false, true, true));
+                }
             }
         });
     }

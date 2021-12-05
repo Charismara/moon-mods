@@ -28,8 +28,10 @@ public class BlackCaveCrystal extends AbstractCaveCrystal {
     @Override
     public void onTick(final Level level, final BlockPos pos, final AABB range) {
         level.getEntitiesOfClass(LivingEntity.class, range).forEach(entity -> {
-            if (!entity.getActiveEffectsMap().containsKey(MobEffects.WITHER)) {
-                entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 20 * 2, 0, false, true, true));
+            if (isHostile(level, entity)) {
+                if (!entity.getActiveEffectsMap().containsKey(MobEffects.WITHER)) {
+                    entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 20 * 2, 0, false, true, true));
+                }
             }
         });
     }

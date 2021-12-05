@@ -28,8 +28,14 @@ public class BrownCaveCrystal extends AbstractCaveCrystal {
     @Override
     public void onTick(final Level level, final BlockPos pos, final AABB range) {
         level.getEntitiesOfClass(Player.class, range).forEach(entity -> {
-            if (!entity.getActiveEffectsMap().containsKey(MobEffects.SATURATION)) {
-                entity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 20 * 2, 0, false, true, true));
+            if (isHostile(level, entity)) {
+                if (!entity.getActiveEffectsMap().containsKey(MobEffects.HUNGER)) {
+                    entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 20 * 2, 0, false, true, true));
+                }
+            } else {
+                if (!entity.getActiveEffectsMap().containsKey(MobEffects.SATURATION)) {
+                    entity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 20 * 2, 0, false, true, true));
+                }
             }
         });
     }

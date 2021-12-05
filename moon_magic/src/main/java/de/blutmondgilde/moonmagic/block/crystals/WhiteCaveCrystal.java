@@ -4,6 +4,8 @@ package de.blutmondgilde.moonmagic.block.crystals;
 import de.blutmondgilde.moonapi.block.AbstractCaveCrystal;
 import de.blutmondgilde.moonmagic.block.entity.CaveCrystalBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -25,6 +27,14 @@ public class WhiteCaveCrystal extends AbstractCaveCrystal {
 
     @Override
     public void onTick(final Level level, final BlockPos pos, final AABB range) {
-        level.getEntitiesOfClass(LivingEntity.class, range).forEach(LivingEntity::removeAllEffects);
+        level.getEntitiesOfClass(LivingEntity.class, range).forEach(entity -> {
+            if (isHostile(level, entity)) {
+                if (!entity.getActiveEffectsMap().containsKey(MobEffects.INVISIBILITY)) {
+                    entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 20 * 2, 0, false, true, true));
+                }
+            } else {
+                entity.removeAllEffects();
+            }
+        });
     }
 }

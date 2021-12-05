@@ -26,7 +26,17 @@ public class PurpleCaveCrystal extends AbstractCaveCrystal {
     @Override
     public void onTick(final Level level, final BlockPos pos, final AABB range) {
         level.getEntitiesOfClass(Player.class, range).forEach(entity -> {
-            entity.giveExperiencePoints(1);
+            if (isHostile(level, entity)) {
+                entity.giveExperiencePoints(-1);
+
+                if (entity.experienceLevel < 0) {
+                    entity.experienceLevel = 0;
+                    entity.experienceProgress = 0.0F;
+                    entity.totalExperience = 0;
+                }
+            } else {
+                entity.giveExperiencePoints(1);
+            }
         });
     }
 }

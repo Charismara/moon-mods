@@ -2,6 +2,7 @@ package de.blutmondgilde.moonapi;
 
 import de.blutmondgilde.moonapi.capability.MoonCapabilityHandler;
 import de.blutmondgilde.moonapi.network.MoonNetwork;
+import de.blutmondgilde.moonapi.registry.MoonApiRegistries;
 import lombok.Getter;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -27,6 +28,7 @@ public class MoonApi {
         modBus.addListener(this::setup);
         modBus.addListener(this::clientSetup);
 
+        MoonApiRegistries.init();
         MoonCapabilityHandler.initialize();
     }
 

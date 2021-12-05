@@ -2,6 +2,8 @@ package de.blutmondgilde.moonapi.block;
 
 import de.blutmondgilde.moonapi.block.entity.TickingBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -10,6 +12,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.AABB;
@@ -51,4 +54,13 @@ public abstract class AbstractCaveCrystal extends Block implements EntityBlock {
     }
 
     public abstract void onTick(Level level, BlockPos pos, AABB range);
+
+    protected boolean isHostile(Level level, LivingEntity entity) {
+        boolean invert = level.dimension().location().equals(DimensionType.NETHER_LOCATION.location());
+        if (invert) {
+            return entity instanceof Player;
+        } else {
+            return !(entity instanceof Player);
+        }
+    }
 }
