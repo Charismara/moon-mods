@@ -1,6 +1,7 @@
 package de.blutmondgilde.moonmagic.registry;
 
 import de.blutmondgilde.moonmagic.MoonMagic;
+import de.blutmondgilde.moonmagic.block.PylonCore;
 import de.blutmondgilde.moonmagic.block.crystals.BlackCaveCrystal;
 import de.blutmondgilde.moonmagic.block.crystals.BlueCaveCrystal;
 import de.blutmondgilde.moonmagic.block.crystals.BrownCaveCrystal;
@@ -44,6 +45,7 @@ class MoonMagicBlockRegistry {
         registry.register("turquoise_cave_crystal", TurquoiseCaveCrystal::new);
         registry.register("white_cave_crystal", WhiteCaveCrystal::new);
         registry.register("yellow_cave_crystal", YellowCaveCrystal::new);
+        registry.register("pylon_core", PylonCore::new);
         registry.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }

@@ -53,4 +53,6 @@ public class MoonMagicBlocks {
     public static final WhiteCaveCrystal WHITE_CAVE_CRYSTAL = null;
     @ObjectHolder("yellow_cave_crystal")
     public static final YellowCaveCrystal YELLOW_CAVE_CRYSTAL = null;
+    @ObjectHolder("pylon_core")
+    public static final PylonCore PYLON_CORE = null;
 }

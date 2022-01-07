@@ -44,7 +44,7 @@ subprojects {
     apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
     java {
-        toolchain.languageVersion = JavaLanguageVersion.of(16)
+        toolchain.languageVersion = JavaLanguageVersion.of(17)
     }
 
     repositories {
@@ -52,7 +52,7 @@ subprojects {
     }
 
     dependencies {
-        minecraft 'net.minecraftforge:forge:1.17.1-37.1.0'
+        minecraft 'net.minecraftforge:forge:1.18.1-39.0.10'
 
         annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
 
@@ -63,7 +63,7 @@ subprojects {
     }
 
     minecraft{
-        mappings channel: 'parchment', version: '2021.10.31-1.17.1'
+        mappings channel: 'parchment', version: '2021.12.19-1.18.1'
     }
 
     sourceSets.main.resources { srcDir 'src/generated/resources' }
@@ -73,7 +73,8 @@ subprojects {
         //Copy it into the build dir
         it.from(sourceSets.main.resources) {
             include "META-INF/mods.toml"
-            expand 'modVersion': "${project.version}"
+            expand 'modVersion': "${project.version}", 'forgeLoader' : "[39,)",
+                    'minecraftVersionRange': "[1.18.1,1.19)"
         }
         it.into "$buildDir/resources/main/"
     }

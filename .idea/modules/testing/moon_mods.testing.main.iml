@@ -18,8 +18,8 @@
   </component>
   <component name="McpModuleSettings">
     <option name="mappingFile" value="E:\Programmieren\JAVA\FORGE\moon_mods\testing\build\createMcpToSrg\output.tsrg" />
-    <option name="mcpVersion" value="parchment_2021.10.31-1.17.1" />
-    <option name="minecraftVersion" value="1.17.1" />
+    <option name="mcpVersion" value="parchment_2021.12.19-1.18.1" />
+    <option name="minecraftVersion" value="1.18.1" />
     <option name="srgType" value="TSRG" />
   </component>
 </module>

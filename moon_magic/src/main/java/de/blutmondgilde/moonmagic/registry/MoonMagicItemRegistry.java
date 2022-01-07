@@ -4,6 +4,7 @@ import de.blutmondgilde.moonapi.block.item.CaveCrystalBlockItem;
 import de.blutmondgilde.moonmagic.MoonMagic;
 import de.blutmondgilde.moonmagic.block.MoonMagicBlocks;
 import de.blutmondgilde.moonmagic.item.CaveCrystalItem;
+import de.blutmondgilde.moonmagic.item.PylonCoreItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -45,6 +46,8 @@ class MoonMagicItemRegistry {
         registry.register("turquoise_crystal_shard", CaveCrystalItem::new);
         registry.register("white_crystal_shard", CaveCrystalItem::new);
         registry.register("yellow_crystal_shard", CaveCrystalItem::new);
+
+        registry.register("pylon_core", PylonCoreItem::new);
 
         registry.register(FMLJavaModLoadingContext.get().getModEventBus());
     }

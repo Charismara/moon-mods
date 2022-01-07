@@ -7,5 +7,7 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(MoonMagic.MOD_ID)
 public class MoonMagicBlockEntities {
     @ObjectHolder("cave_crystal")
-    public static BlockEntityType<?> CAVE_CRYSTAL = null;
+    public static final BlockEntityType<?> CAVE_CRYSTAL = null;
+    @ObjectHolder("pylon_core")
+    public static final BlockEntityType<PylonCoreEntity> PYLON_CORE = null;
 }

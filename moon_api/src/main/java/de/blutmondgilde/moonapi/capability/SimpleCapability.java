@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.Lazy;
-import net.minecraftforge.fmllegacy.network.PacketDistributor;
+import net.minecraftforge.network.PacketDistributor;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class SimpleCapability<T extends AbstractMoonCapability & IMoonCapability> {

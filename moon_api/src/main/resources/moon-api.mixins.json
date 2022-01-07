@@ -2,13 +2,13 @@
   "required": true,
   "minVersion": "0.8",
   "package": "de.blutmondgilde.moonapi.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "refmap": "moonapi.refmap.json",
   "mixins": [
-    "MixinLivingEntity"
+    "MixinLivingEntity",
+    "MixinMaterial"
   ],
-  "client": [
-  ],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   }
